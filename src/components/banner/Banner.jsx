@@ -11,7 +11,7 @@ import { useWindowSize } from '../../function/windowSize'
 
 const Banner = () => {
   const { windowSize } = useWindowSize()
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const sidebarRef = useRef()
   useEffect(() => {
     if (windowSize < 768) {
@@ -86,7 +86,7 @@ const Banner = () => {
       </div>
       <div className="banner-right">
         <div className="chevron_icon" onClick={handelOnSidebarClick}>
-          {show ? <BiChevronsLeft /> : <BiChevronsRight />}
+          {show ? <BiChevronsRight /> : <BiChevronsLeft />}
         </div>
       </div>
     </div>
