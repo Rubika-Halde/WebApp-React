@@ -1,0 +1,20 @@
+$black-color: #000000;
+$grey-color: #8c8c8c;
+$brown-color: #914900;
+$white-color: #fff;
+$light-grey: #d7d2d2;
+
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// media Queries
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+

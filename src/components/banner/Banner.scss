@@ -1,0 +1,148 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120vh;
+  position: relative;
+  background-image: url('../../assets/img1.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .banner-left {
+    flex: 1 0 350px;
+    padding: 30px 20px 0 10px;
+    width: 100%;
+    background-color: $white-color;
+    height: 100%;
+    @media (max-width: $md) {
+      display: none;
+    }
+
+    .top-icon {
+      background-color: $light-grey;
+      height: 30px;
+      width: 30px;
+      @include flex(center, center);
+      color: $brown-color;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .banner-left-heading {
+      font-size: 22px;
+      line-height: 28px;
+      max-width: 250px;
+      letter-spacing: 2px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .banner-left-icons {
+      @include flex(center, start);
+
+      margin-bottom: 20px;
+      gap: 30px;
+      .icons {
+        @include flex(center, center);
+        flex-direction: column;
+        font-size: 14px;
+        .banner-left-icon {
+          background-color: $light-grey;
+          height: 30px;
+          width: 30px;
+          @include flex(center, center);
+          flex-direction: column;
+          color: $black-color;
+          border-radius: 50px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .banner-left-p-tags {
+      margin-bottom: 5px;
+      .Dynasty {
+        color: $grey-color;
+        font-size: 14px;
+      }
+    }
+    .description {
+      .banner-left-description {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      .para {
+        font-size: 12px;
+        color: $grey-color;
+        line-height: 18px;
+        max-width: 290px;
+        margin-bottom: 10px;
+      }
+    }
+    .banner-left-read-more {
+      @include flex(center, start);
+      gap: 10px;
+      color: $brown-color;
+      margin-bottom: 10px;
+    }
+    .banner-buttons {
+      @include flex(center, start);
+      gap: 10px;
+      .btn-one {
+        background-color: $brown-color;
+        border: none;
+        padding: 10px 10px;
+        font-size: 12px;
+        color: $white-color;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        border-radius: 5px;
+      }
+      .btn-two {
+        background-color: $white-color;
+        border: 1px solid $brown-color;
+        padding: 10px 10px;
+        font-size: 12px;
+        color: $brown-color;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        border-radius: 5px;
+      }
+    }
+  }
+  .banner-right {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background-image: url('../../assets/img2.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 5;
+    .chevron_icon {
+      position: absolute;
+      top: -90px;
+      left: -8px;
+      color: $brown-color;
+      width: 25px;
+      height: 20px;
+      background-color: $light-grey;
+      border-radius: 3px;
+      @include flex(center, center);
+      cursor: pointer;
+    }
+  }
+}
+
+.toggleLeftSidebar {
+  display: none;
+  @media (max-width: $md) {
+    display: block !important;
+  }
+}
+
+@media (max-width: $md) {
+  .banner {
+    .banner-left {
+      display: none;
+    }
+  }
+}
