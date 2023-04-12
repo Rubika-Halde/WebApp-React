@@ -10,15 +10,21 @@
   background-repeat: no-repeat;
 
   .banner-left {
+    overflow-y: scroll;
     flex: 1 0 350px;
     padding: 30px 20px 0 10px;
     width: 100%;
     background-color: $white-color;
-    height: 120vh;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
     @media (max-width: $md) {
       display: none;
+      transition: all 0.5s ease-in-out;
     }
-
+    @media (max-width: $sm) {
+      display: none;
+      transition: all 0.5s ease-in-out;
+    }
     .top-icon {
       background-color: $light-grey;
       height: 30px;
@@ -79,9 +85,20 @@
     }
     .banner-left-read-more {
       @include flex(center, start);
-      gap: 10px;
+      gap: 5px;
       color: $brown-color;
       margin-bottom: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      .readMore-arrow {
+        font-size: 16px;
+      }
+      .read-more-btn {
+        border: none;
+        background: transparent;
+        color: $brown-color;
+        font-size: 16px;
+      }
     }
     .banner-buttons {
       @include flex(center, start);
@@ -109,6 +126,8 @@
     }
   }
   .banner-right {
+    // transition: left 0.3s ease;
+    scroll-behavior: smooth;
     position: relative;
     width: 100%;
     height: 60%;
@@ -117,7 +136,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 5;
+
     .chevron_icon {
+      // transition-timing-function: linear;
       position: absolute;
       top: -90px;
       left: -8px;
@@ -133,16 +154,12 @@
 }
 
 .toggleLeftSidebar {
-  display: none;
+  overflow: hidden;
+  visibility: hidden;
+  flex-basis: 0 !important;
   @media (max-width: $md) {
+    visibility: visible;
     display: block !important;
-  }
-}
-
-@media (max-width: $md) {
-  .banner {
-    .banner-left {
-      display: none;
-    }
+    flex-basis: 350px !important;
   }
 }

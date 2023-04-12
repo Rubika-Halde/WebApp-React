@@ -8,11 +8,13 @@ import {
   AiOutlineArrowRight,
 } from 'react-icons/ai'
 import { useWindowSize } from '../../function/windowSize'
+import ReadMore from './ReadMore'
 
 const Banner = () => {
   const { windowSize } = useWindowSize()
   const [show, setShow] = useState(false)
   const sidebarRef = useRef()
+
   useEffect(() => {
     if (windowSize < 768) {
       setShow(true)
@@ -23,6 +25,7 @@ const Banner = () => {
 
   const handelOnSidebarClick = () => {
     sidebarRef.current.classList.toggle('toggleLeftSidebar')
+    // transitionRef.current.style.transitionDuration = '0.5s'
     setShow((prev) => !prev)
   }
 
@@ -64,21 +67,18 @@ const Banner = () => {
         <div className="description">
           <p className="banner-left-description">Description:</p>
           <p className="para">
-            Maitreya, the future Buddha to be, resides in the Tushita heaven as
-            a bodhisattva waiting to redeem humanity. In Buddhism, Maitreya is
-            the eighth Buddha, a successor of the seven historical Buddhas
-            (sapta-manushi Buddhas). The Digha Nikaya mentions, Maitreya Buddha
-            will be born in ketumati, in present-day Varanasi, Uttar Pradesh. As
-            a bodhisattva, Maitreya wears a heavily adorned with earrings,
-            wristlets, necklaces, and an amulet. The
+            <ReadMore>
+              Maitreya, the future Buddha to be, resides in the Tushita heaven
+              as a bodhisattva waiting to redeem humanity. In Buddhism, Maitreya
+              is the eighth Buddha, a successor of the seven historical Buddhas
+              (sapta-manushi Buddhas). The Digha Nikaya mentions, Maitreya
+              Buddha will be born in ketumati, in present-day Varanasi, Uttar
+              Pradesh. As a bodhisattva, Maitreya wears a heavily adorned with
+              earrings, wristlets, necklaces, and an amulet. The
+            </ReadMore>
           </p>
         </div>
-        <div className="banner-left-read-more">
-          <p>
-            <AiOutlineArrowRight />
-          </p>
-          <p className="read-more-btn">Read More</p>
-        </div>
+        
         <div className="banner-buttons">
           <button className="btn-one">ADD TO COLLECTIONS</button>
           <button className="btn-two">SOUVENIR</button>
